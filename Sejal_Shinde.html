@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, h1, h2, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #E1F5FE, #B3E0FF);
+    }
+
+    body, header, footer {
+      margin: 20px;
+    }
+    header {
+      background-color: #E1F5FE;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+.cta-button {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px; 
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px; 
+  margin-top: 9px; 
+}
+
+    #canvas-generator {
+      background-color: #fff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    #canvas-input {
+      width: 100%;
+      max-width: 600px;
+      height: 150px;
+      padding: 10px;
+      margin: 10px auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #generate-button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #generated-canvas {
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    #company-name {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .k { color: #F4B400; }
+    .l { color: #0F9D58; }
+    .y { color: #DB4437; }
+    .n { color: #F4B400; }
+    .t { color: #DB4437; }
+    .r { color: #0F9D58; }
+    .a { color: #F4B400; }
+#search-bar {
+      width: 400px;
+      margin-right: 20px;
+      padding: 7px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    #cart-link {
+      color: #0D47A1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #navigation {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    #navigation a {
+      color: #0D47A1;
+      margin-left: 20px;
+      
+    }
+     #horizontal-strip {
+      position: absolute;
+       top: 50px;
+      left: 0;
+      right: 0;
+      background-color: #0D47A1; 
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 1.5cm;
+      margin-top: 27px;
+      padding: 0 20px; 
+    }
+
+    .strip-option {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+    }
+
+    #image-container {
+      position: fixed;
+      bottom: 1cm; 
+      right:0;
+      margin: 0;
+      padding: 0;
+    }
+
+    #page-image {
+      width: 350px; 
+      height: auto;
+      
+    }
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0; 
+  width: 100%;
+}
+
+
+    #options-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      position: relative;
+      top: 60px;
+    }
+
+   
+    .option {
+      width: 150px; 
+      padding: 10px; 
+      background-color: #ffffff; 
+      border: 1px solid #0D47A1; 
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.2s;
+      margin: 0 10px; 
+    }
+
+    .option a {
+      color: #0D47A1;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-size: 14px; 
+    }
+
+    .option a:hover {
+      color: #1565C0; 
+    }
+
+    .option:hover {
+      transform: scale(1.05); 
+    }
+      #latest-offers {
+      background-color: #E1F5FE; 
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px; 
+      border-radius: 10px;
+    }
+
+    .offer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .offer {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+    }
+
+    .offer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #0D47A1;
+    }
+
+    .offer p {
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+  <title>Klyntra Company</title>
+</head>
+<body>
+  <header>
+ <div>
+      <input type="text" id="search-bar" placeholder="Search...">
+      <a href="#" id="cart-link">See Cart</a>
+    </div>
+    <div id="navigation">
+      <a href="#home">Home</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+<div id="horizontal-strip">
+    
+    <div style="width: 20px;"></div>
+    <a href="#" class="strip-option">GIFT CARD</a>
+    <a href="#" class="strip-option">COUPON</a>
+    <a href="#" class="strip-option">BROWSING HISTORY</a>
+    <a href="#" class="strip-option">SUBSCRIBE</a>
+    <a href="#" class="strip-option">SAVE</a>
+  </div>
+    
+  </header>
+  <div id="options-container">
+    <div class="option"><a href="#">HOME APPLIANCES</a></div>
+    <div class="option"><a href="#">PERSONAL CARE</a></div>
+    <div class="option"><a href="#">FABRIC CARE</a></div>
+  </div>
+  
+   <div id="image-container">
+    <img id="page-image" src="C:\Users\SEJAL SHINDE\OneDrive\Desktop\Sejal_Shinde\image_1.png" alt="Image Description">
+  </div>
+   <section id="latest-offers">
+    <div class="offer-container">
+      <div class="offer">
+        <h3>Personal Care</h3>
+        <p>Get ready for summer with <strong>Flat 50% off</strong> on selected personal care products!</p>
+        <a href="#" class="cta-button">Shop Now</a>
+      </div>
+      <div class="offer">
+        <h3>Home Appliances</h3>
+        <p>Elevate your home with <strong>Flat 30% off</strong> on home appliances!</p>
+        <a href="#" class="cta-button">Shop Now</a>
+      </div>
+    </div>
+    <div class="offer-container">
+      <div class="offer">
+        <h3>Fabric Care</h3>
+        <p>Refresh your wardrobe with <strong>Flat 40% off</strong> on fabric care essentials!</p>
+        <a href="#" class="cta-button">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2023 Klyntra. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </footer>
+
+  <!-- Company name in different colors -->
+  <div id="company-name">
+    <span class="k">K</span><span class="l">L</span><span class="y">Y</span><span class="n">N</span><span class="t">T</span><span class="r">R</span><span class="a">A</span>
+  </div>
+  
+</body>
+</html>
+
+
